@@ -1,5 +1,8 @@
 const Player = sign => {
-    return {sign};
+    const returnSign = () => {
+        return sign;
+    }
+    return {returnSign, sign};
 }
 
 const GameBoard = (() => {
@@ -16,22 +19,52 @@ const GameBoard = (() => {
     return {addSign, returnBoard};
 })()
 
+const ScreenController = (() => {
+    const cells = document.querySelectorAll(".cell");
+    const display = document.querySelector("#display");
+    const restartButton = document.querySelectorAll("#restart");
+
+    let latestIndex = null;
+
+    const updateDisplay = (sign) => {
+        display.innerHTML = `Player ${sign}'s turn`
+    }
+
+    const listenForClick = () => {
+        cells.forEach(cell => {
+            cell.addEventListener("click", e => {
+                latestIndex = cell.getAttribute("data-index");
+                cell.innerHTML = GameController.returnCurrentPlayer().returnSign();
+                GameController.PlayRound(latestIndex);
+            })
+        })
+    }
+
+    const returnLatestIndex = (sign) => {
+        return latestIndex;
+    }
+
+    return {updateDisplay, listenForClick, returnLatestIndex};
+})()
+
 const GameController = (() => {
-    GameBoard.addSign(2, "X")
-    GameBoard.addSign(3, "X")
-    GameBoard.addSign(6, "333")
-    GameBoard.addSign(6, "O123")
+    const playerX = Player("X");
+    const playerO = Player("O");
+    let currentPlayer = playerX;
+    ScreenController.listenForClick();
 
-    console.log(GameBoard.returnBoard())
-    return {};
+    const PlayRound = (index) => {
+        if (currentPlayer == playerX) currentPlayer = playerO;
+        else currentPlayer = playerX;
+        ScreenController.updateDisplay(currentPlayer.returnSign());
+    }
+
+    const returnCurrentPlayer = () => {
+        return currentPlayer;
+    }
+ 
+    return {returnCurrentPlayer, PlayRound};
 })()
-
-const DisplayController = (() => {
-    return {};
-})()
-
-
-
 
 
 
