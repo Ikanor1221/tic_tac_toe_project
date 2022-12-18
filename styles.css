@@ -68,10 +68,6 @@ main * {
     font-weight: 100;
 }
 
-.display {
-    /* border: solid; */
-}
-
 .board {
     display: grid;
     grid-template-rows: 170px 170px 170px;

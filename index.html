@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/8e79105d98.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Varela+Round&display=swap" rel="stylesheet"/>
@@ -18,15 +18,15 @@
     <main>
         <h2 class="display" id="display">Hello!</h2>
         <div class="board">
-            <div class="cell" id="cell1">X</div>
-            <div class="cell" id="cell2">O</div>
-            <div class="cell" id="cell3"></div>
-            <div class="cell" id="cell4"></div>
-            <div class="cell" id="cell5"></div>
-            <div class="cell" id="cell6"></div>
-            <div class="cell" id="cell7"></div>
-            <div class="cell" id="cell8"></div>
-            <div class="cell" id="cell9"></div>
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
         </div>
         <div class="last_row">
             <button id="restart">Restart</button>
@@ -34,8 +34,10 @@
     </main>
     <footer>
         <p>Copyright © 2022 Ikanor1221
-            <a href="https://github.com/michalosman" target="_blank">
+            <!-- <a href="https://github.com/michalosman" target="_blank"> -->
+            <a href="https://github.com/Ikanor1221" target="_blank"> 
                 <i class="fa-brands fa-github"></i>
+            </a>
         </p>
     </footer>
 </body>
