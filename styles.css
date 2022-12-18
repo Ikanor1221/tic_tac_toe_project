@@ -53,6 +53,7 @@ header {
     width: 100%;
     background-color: var(--header-background-color);
     color: var(--header-font-color);
+    border-bottom: 3px solid var(--blue-border-color);;
 }
 
 main {
@@ -75,6 +76,7 @@ main * {
     display: grid;
     grid-template-rows: 170px 170px 170px;
     grid-template-columns: 170px 170px 170px;
+    border: 3px solid var(--blue-border-color);
 }
 
 .cell {
@@ -115,4 +117,14 @@ button:active {
 footer {
     align-self: end;
     padding: 10px;
+}
+
+.fa-github {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+    color: var(--font-color);
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
 }
