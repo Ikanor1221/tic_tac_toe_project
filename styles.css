@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 body {
@@ -123,4 +123,8 @@ footer {
 
 .fa-github:hover {
     transform: rotate(360deg) scale(1.2);
+}
+
+.display {
+    text-align: center;
 }
